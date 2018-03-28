@@ -2,14 +2,16 @@
 const webpack                 =  require('webpack');
 const ExtractTextPlugin       =  require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin       =  require('html-webpack-plugin');
-const  getHtmlconfig=function(name,title){
+const data       =  require('./../../data/init');
+const  getHtmlconfig=function(name,out,title,data){
     return{
         template :'./src/view/'+name+'.html',
-        filename :'view/'+name+'.html',
+        filename : out+'/'+name+'.html',
         title    : title,
+        data     : data,
         inject   :true,
         hash     :true,
-        chunks   :['common',name]  
+        chunks   :['common',name]
         }
     }
       let plugins=[
@@ -19,10 +21,19 @@ const  getHtmlconfig=function(name,title){
             filename:'js/common.js'
         }),
         new ExtractTextPlugin("css/[name].css"),
-        new HtmlWebpackPlugin(getHtmlconfig('index','首页' )),
-        new HtmlWebpackPlugin(getHtmlconfig('reg','注册' )),
-    ];
-
        
+        
+    ];
+   
+  
+     function htmltem(array){
+        array.forEach(element => {
+            let pl=new HtmlWebpackPlugin(getHtmlconfig(element.html,element.out,element.title,element.data ));
+            plugins.push(pl);
+       
+        });
+     }
 
+
+  htmltem(data);
     module.exports =plugins;

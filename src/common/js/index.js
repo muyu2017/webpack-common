@@ -1,4 +1,5 @@
 "user strict"
+    
+  console.log($(this)) ;
 
-   require("comcss/index.css");
    console.log('index');

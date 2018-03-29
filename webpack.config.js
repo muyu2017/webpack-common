@@ -14,7 +14,6 @@
                 plugins:plugins,
                 devServer:devServer(path,__dirname),
                 resolve:resolve(__dirname),
-          
         };
         
     module.exports = config;

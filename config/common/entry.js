@@ -2,7 +2,7 @@
 
 //入口文件
 let entry={
-    'common'           :['./src/common/js/common.js'],
+        'common'           :['./src/common/js/common.js'],
     };
 
 module.exports= entry;

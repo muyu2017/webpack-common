@@ -24,7 +24,7 @@ const autoprefixer= require('autoprefixer');
                                 {loader:'url-loader',
                                 options:{
                                     limit:8192,
-                                    name:'resource/img/[name].[ext]'
+                                    name:'images/[name].[ext]'
                                 } 
                             }]
                         },

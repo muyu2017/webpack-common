@@ -1,0 +1,16 @@
+$anomayl:'anmaly';
+$module:'module';
+$members:'members';
+
+$imgtrue:2;
+
+@function img($n) {
+
+    @if $imgtrue==1 {
+        @return '{{ image('+$anomayl+'.'+$module+'.'+$members+'::images/'+$n+').url }}';
+    } @else
+    {
+        @return '~img/'+$n ;
+    }
+}
+  

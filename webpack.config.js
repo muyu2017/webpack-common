@@ -14,7 +14,7 @@
                 plugins:plugins,
                 devServer:devServer(path,__dirname),
                 resolve:resolve(__dirname),
-                devtool: 'source-map',
+          
         };
         
     module.exports = config;

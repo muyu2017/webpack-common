@@ -5,13 +5,13 @@ const HtmlWebpackPlugin       =  require('html-webpack-plugin');
 const data       =  require('./../../data/init');
 const  getHtmlconfig=function(name,out,title,data){
     return{
-        template :'./src/view/'+name+'.html',
-        filename : out+'/'+name+'.html',
+        template :'./src/view/'+name[0]+'.html',
+        filename : out+'/'+name[0]+'.html',
         title    : title,
         data     : data,
-        inject   :true,
+        inject   :'body',
         hash     :true,
-        chunks   :['common',name]
+        chunks   :[name[0],name[1]]
         }
     }
       let plugins=[
@@ -21,7 +21,7 @@ const  getHtmlconfig=function(name,out,title,data){
             filename:'js/common.js'
         }),
         new ExtractTextPlugin("css/[name].css"),
-       
+ 
         
     ];
    
@@ -30,10 +30,9 @@ const  getHtmlconfig=function(name,out,title,data){
         array.forEach(element => {
             let pl=new HtmlWebpackPlugin(getHtmlconfig(element.html,element.out,element.title,element.data ));
             plugins.push(pl);
-       
         });
      }
 
 
-  htmltem(data);
+    htmltem(data);
     module.exports =plugins;

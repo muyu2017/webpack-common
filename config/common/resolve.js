@@ -4,15 +4,14 @@
 let resolve=(dirname)=>{
     
     return{
-
-        alias:{
-            node_modules  :dirname+'/node_modules',
-            img  :dirname+'/resource/img',
-            font  :dirname+'/resource/font',
-            comcss  :dirname+'/src/common/css',
-            comjs  :dirname+'/src/common/js',
-        }
-    }
+            alias:{
+                    node_modules  : dirname+'/node_modules'  ,
+                    img           : dirname+'/resource/img'  ,
+                    font          : dirname+'/resource/font' ,
+                    comcss        : dirname+'/src/common/css',
+                    comjs         : dirname+'/src/common/js' ,
+                  }
+          }
 };
 
 

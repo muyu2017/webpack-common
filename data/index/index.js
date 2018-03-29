@@ -2,6 +2,6 @@
 
  
               
-  let data = { header: "头" ,fool:"身"};
+  let data = { header: "reg" ,fool:"身"};
 
   module.exports=data;
